@@ -7,10 +7,14 @@ void send(message_t message, mailbox_t* mailbox_ptr){
     */
 }
 
-/*  TODO: 
-    1. Use semaphore to assure sender and receiver work alternately
-    2. Send message & measure the time
-    3. Don't forget to clean up resources in the end
-*/
 int main(){
+    /*  TODO: 
+        1. Call send(message, &mailbox) according to the flowchart
+        2. Cab be blocked by the receiver and can block itself
+        3. Measure the total sending time
+        4. Get the mechanism and the input file from command line arguments
+        5. Get the messages to be sent from the input file
+        6. Print information on the console according to the output format
+        7. Don't forget to clean up resources in the end
+    */
 }
