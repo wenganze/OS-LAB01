@@ -9,11 +9,11 @@ void receive(message_t* message_ptr, mailbox_t* mailbox_ptr){
 
 int main(){
     /*  TODO: 
-        1. Call receive(&message, &mailbox) according to the flowchart
-        2.Cab be blocked by the sender and can block itself
-        3. Measure the total receiving time
-        4. Get the mechanism from command line arguments
-        5. Print information on the console according to the output format
-        6. Don't forget to clean up resources in the end
+        1) Call receive(&message, &mailbox) according to the flow in slide 4
+        2) Measure the total receiving time
+        3) Get the mechanism from command line arguments
+            • e.g. ./receiver 1
+        4) Print information on the console according to the output format
+        5) If the exit message is received, print the total receiving time and terminate the receiver.c
     */
 }
