@@ -6,16 +6,19 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
+#include <mqueue.h>
+#include <sys/mman.h>
+#include <semaphore.h>
 #include <sys/shm.h>
 #include <semaphore.h>
 #include <time.h>
 
+#define MAX_MSG_SIZE 1024
+
 typedef struct {
     int flag;      // 1 for message passing, 2 for shared memory
     union{
-        int msqid; //for system V api. You can replace it with struecture for POSIX api
+        mqd_t msqid; //for system V api. You can replace it with struecture for POSIX api
         char* shm_addr;
     }storage;
 } mailbox_t;
@@ -25,6 +28,8 @@ typedef struct {
     /*  TODO: 
         Message structure for wrapper
     */
+    char text[MAX_MSG_SIZE];
 } message_t;
 
-void receive(message_t* message_ptr, mailbox_t* mailbox_ptr);
+
+void send(message_t message, mailbox_t* mailbox_ptr);
